@@ -1,28 +1,42 @@
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
-from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
 
 
 class LoginScreen(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.cols = 2
-        self.add_widget(Label(text='Username', font_size=72))
-        self.username = TextInput(text='Dude',
-                                  multiline=False,
-                                  padding_x=[100,100],
-                                  padding_y=[200,0],
+        self.cols = 3
+
+        grid_layout = GridLayout(cols=3,
+                                 row_force_default=True,
+                                 row_default_height=200,
+                                 col_force_default=True,
+                                 col_default_width=200)
+        for i in range(1,7):
+            grid_layout.add_widget(Button(text=f'{i}'))
+
+        self.title = Label(text='Title', font_size=72, size_hint_x = None, width=600)
+        self.paragraph = Label(text='Message', font_size=72, size_hint_x = None, width=600)
+        self.next_button = Button(text='CLICK ME',
                                   font_size=72,
-                                  background_color=[0.8, 1, 0.8, 1])
-        self.add_widget(self.username)
-        self.add_widget(Label(text='password', font_size=72))
-        self.password = TextInput(password=True,
-                                  multiline=False,
-                                  padding=[10, 10, 10, 10],
-                                  font_size=72
-                                  )
-        self.add_widget(self.password)
+                                  size_hint_y =None,
+                                  height=100,size_hint_x = None, width=600)
+        self.add_widget(Label(text=''))
+        self.add_widget(grid_layout)
+        self.add_widget(Label(text=''))
+        self.add_widget(Label(text=''))
+        self.add_widget(self.title)
+        self.add_widget(Label(text=''))
+        self.add_widget(Label(text=''))
+        self.add_widget(self.paragraph)
+        self.add_widget(Label(text=''))
+        self.add_widget(Label(text=''))
+        self.add_widget(self.next_button)
+        self.add_widget(Label(text=''))
+
+
 
 class MyApp(App):
     def build(self):
