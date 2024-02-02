@@ -7,7 +7,7 @@ from kivy.lang import Builder
 Builder.load_file('unrelated.kv')
 
 
-class MyGridLayout(Widget):
+class MyLayout(Widget):
 
     name = ObjectProperty(None)
     color = ObjectProperty(None)
@@ -26,7 +26,7 @@ class MyGridLayout(Widget):
 
 class Space(App):
     def build(self):
-        return MyGridLayout()
+        return MyLayout()
 
 
 if __name__ == '__main__':

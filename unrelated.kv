@@ -1,34 +1,23 @@
-<MyGridLayout>
+<Button>
+    font_size: 65
+    background_normal: ''
+    background_color: (0,0,1,1)
 
-    name: name
-    color: color
-    pizza: pizza
-
-    GridLayout:
-        cols: 1
+<MyLayout>
+    BoxLayout:
+        orientation: 'vertical'
         size: root.width, root.height
 
-        GridLayout:
-            cols: 2
-            Label:
-                text: "Name"
-            TextInput:
-                id: name
-                multiline: False
-
-            Label:
-                text: "Color"
-            TextInput:
-                id: color
-                multiline: False
-
-            Label:
-                text: "Pizza"
-            TextInput:
-                id: pizza
-                multiline: False
+        padding: 50
+        spacing: 20
 
         Button:
-            text: "Submit"
-            font_size: 65
-            on_press: root.press()
+            text: "hello"
+
+        Button:
+            text: "there"
+
+        Button:
+            text: "mate"
+            pos_hint: {'center_x': .5}
+            size_hint: (.5, .5)
