@@ -1,0 +1,14 @@
+<MenuScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 100
+        spacing: 50
+        Image:
+            source: 'images/dragon.png'
+            allow_stretch: True
+            keep_ratio: True
+        Button:
+            text: 'START'
+            pos_hint: {'center_x': 0.5}
+            size_hint: (0.3, 0.15)
+            on_press: root.manager.current = 'game'
