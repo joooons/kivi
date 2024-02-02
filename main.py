@@ -3,6 +3,7 @@ from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
+from kivy.core.window import Window
 
 Builder.load_file('unrelated.kv')
 
@@ -26,6 +27,7 @@ class MyLayout(Widget):
 
 class Space(App):
     def build(self):
+        Window.clearcolor = (0.7,0.9,0.7,1)
         return MyLayout()
 
 
