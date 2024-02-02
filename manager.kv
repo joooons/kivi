@@ -1,0 +1,15 @@
+<MenuScreen>:
+    BoxLayout:
+        Button:
+            text: 'START'
+            on_press: root.manager.current = 'game'
+        Button:
+            text: 'Button'
+
+<GameScreen>:
+    BoxLayout:
+        Button:
+            text: 'Button'
+        Button:
+            text: 'Back to Main Menu'
+            on_press: root.manager.current = 'menu'
