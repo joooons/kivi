@@ -1,14 +1,13 @@
 <GameScreen>:
     BoxLayout:
         orientation: "vertical"
-        padding: 100
-        spacing: 50
         Image:
-            source: 'images/dragon.png'
+            source: 'images/sky.jpg'
             allow_stretch: True
-            keep_ratio: True
+            keep_ratio: False
+            size: root.size
         Button:
             text: 'Back to Main Menu'
             pos_hint: {'center_x': 0.5}
-            size_hint: (0.3, 0.15)
+            size_hint: (0.2, 0.1)
             on_press: root.manager.current = 'menu'

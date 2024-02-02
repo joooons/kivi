@@ -1,8 +1,7 @@
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 
-# Builder.load_file('manager.kv')
 Builder.load_file('menu.kv')
 Builder.load_file('game.kv')
 
@@ -17,7 +16,7 @@ class GameScreen(Screen):
 
 class Space(App):
     def build(self):
-        sm = ScreenManager()
+        sm = ScreenManager(transition=NoTransition())
         sm.add_widget(MenuScreen(name='menu'))
         sm.add_widget(GameScreen(name='game'))
         return sm
