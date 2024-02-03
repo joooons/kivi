@@ -3,12 +3,15 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 
 Builder.load_file('menu.kv')
-Builder.load_file('game.kv')
+# Builder.load_file('game.kv')
+Builder.load_file('tick.kv')
 
 
 class MenuScreen(Screen):
     pass
 
+class TickScreen(Screen):
+    pass
 
 class GameScreen(Screen):
     pass
@@ -19,8 +22,9 @@ class Space(App):
 
     def build(self):
         sm = ScreenManager(transition=NoTransition())
-        sm.add_widget(GameScreen(name='game'))
         sm.add_widget(MenuScreen(name='menu'))
+        sm.add_widget(TickScreen(name='tick'))
+        # sm.add_widget(GameScreen(name='game'))
         return sm
 
 
