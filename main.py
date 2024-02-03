@@ -1,6 +1,9 @@
+import kivy
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
+
+kivy.require("2.2.1")
 
 Builder.load_file('menu.kv')
 # Builder.load_file('game.kv')
@@ -10,8 +13,10 @@ Builder.load_file('tick.kv')
 class MenuScreen(Screen):
     pass
 
+
 class TickScreen(Screen):
     pass
+
 
 class GameScreen(Screen):
     pass
