@@ -13,19 +13,14 @@
                     pos: self.pos
                     size: self.size
             Image:
+                id: shika
                 source: 'images/shikamaru_sprite.png'
                 allow_stretch: True
                 keep_ratio: False
                 pos: app.square_pos['x'], app.square_pos['y']
                 size: 200, 200
-                canvas.before:
-                    PushMatrix
-                    Rotate:
-                        angle: app.angle
-                        axis: 0, 0, 1
-                        origin: self.center
-                canvas.after:
-                    PopMatrix
+                angle: 0
+
         BoxLayout:
             orientation: "horizontal"
             size_hint: 1, 0.2
@@ -33,6 +28,7 @@
                 text: 'LEFT'
             Button:
                 text: 'RIGHT'
+                on_press: app.rotate_image(shika)
             Button:
                 text: 'Back to Main Menu'
                 on_press: root.manager.current = 'menu'
