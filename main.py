@@ -17,8 +17,8 @@ class GameScreen(Screen):
 
 
 class Space(App):
-    square_pos = {'x': 200, 'y': 600}
-    angle = 45
+    square_pos = {'x': 0, 'y': 400}
+    angle = -45
     def build(self):
         sm = ScreenManager(transition=NoTransition())
         sm.add_widget(GameScreen(name='game'))

@@ -1,12 +1,11 @@
 <GameScreen>:
     BoxLayout:
         orientation: "vertical"
-
         Image:
             source: 'images/sky.jpg'
             allow_stretch: True
             keep_ratio: False
-            size: root.size
+            size_hint: 1, 0.8
             canvas:
                 Color:
                     rgba: 1, 1, 0, 0.5
@@ -18,7 +17,7 @@
                 allow_stretch: True
                 keep_ratio: False
                 pos: app.square_pos['x'], app.square_pos['y']
-                size: 400, 400
+                size: 200, 200
                 canvas.before:
                     PushMatrix
                     Rotate:
@@ -27,8 +26,13 @@
                         origin: self.center
                 canvas.after:
                     PopMatrix
-        Button:
-            text: 'Back to Main Menu'
-            pos_hint: {'center_x': 0.5}
-            size_hint: (0.2, 0.1)
-            on_press: root.manager.current = 'menu'
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, 0.2
+            Button:
+                text: 'LEFT'
+            Button:
+                text: 'RIGHT'
+            Button:
+                text: 'Back to Main Menu'
+                on_press: root.manager.current = 'menu'
