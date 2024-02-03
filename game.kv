@@ -26,9 +26,10 @@
             size_hint: 1, 0.2
             Button:
                 text: 'LEFT'
+                on_press: app.rotate_image(shika, 10)
             Button:
                 text: 'RIGHT'
-                on_press: app.rotate_image(shika)
+                on_press: app.rotate_image(shika, -10)
             Button:
                 text: 'Back to Main Menu'
                 on_press: root.manager.current = 'menu'
