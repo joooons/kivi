@@ -15,6 +15,7 @@
                     pos: self.pos
                     size: self.size
             Sprite:
+
                 id: shika
                 source: 'images/shikamaru_sprite.png'
                 allow_stretch: True
@@ -28,10 +29,10 @@
             size_hint: 1, 0.2
             Button:
                 text: 'LEFT'
-                on_press: shika.rotate_thing(10)
+                on_press: shika.start_rotation(2)
             Button:
                 text: 'RIGHT'
-                on_press: shika.rotate_thing(-10)
+                on_press: shika.rotate(-10)
             Button:
                 text: 'Back to Main Menu'
                 on_press: root.manager.current = 'menu'
