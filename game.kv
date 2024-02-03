@@ -1,3 +1,5 @@
+#:import Sprite sprite.Sprite
+
 <GameScreen>:
     BoxLayout:
         orientation: "vertical"
@@ -12,7 +14,7 @@
                 Rectangle:
                     pos: self.pos
                     size: self.size
-            Image:
+            Sprite:
                 id: shika
                 source: 'images/shikamaru_sprite.png'
                 allow_stretch: True
@@ -26,10 +28,10 @@
             size_hint: 1, 0.2
             Button:
                 text: 'LEFT'
-                on_press: app.rotate_image(shika, 10)
+                on_press: shika.rotate_thing(10)
             Button:
                 text: 'RIGHT'
-                on_press: app.rotate_image(shika, -10)
+                on_press: shika.rotate_thing(-10)
             Button:
                 text: 'Back to Main Menu'
                 on_press: root.manager.current = 'menu'
