@@ -1,11 +1,24 @@
 <GameScreen>:
     BoxLayout:
         orientation: "vertical"
+
         Image:
             source: 'images/sky.jpg'
             allow_stretch: True
             keep_ratio: False
             size: root.size
+            canvas:
+                Color:
+                    rgba: 1, 1, 0, 0.5
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Image:
+                source: 'images/shikamaru_sprite.png'
+                allow_stretch: True
+                keep_ratio: False
+                pos: app.square_pos['x'], app.square_pos['y']
+                size: 400, 400
         Button:
             text: 'Back to Main Menu'
             pos_hint: {'center_x': 0.5}
