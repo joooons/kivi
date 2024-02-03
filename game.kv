@@ -19,6 +19,14 @@
                 keep_ratio: False
                 pos: app.square_pos['x'], app.square_pos['y']
                 size: 400, 400
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: app.angle
+                        axis: 0, 0, 1
+                        origin: self.center
+                canvas.after:
+                    PopMatrix
         Button:
             text: 'Back to Main Menu'
             pos_hint: {'center_x': 0.5}

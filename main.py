@@ -18,10 +18,11 @@ class GameScreen(Screen):
 
 class Space(App):
     square_pos = {'x': 200, 'y': 600}
+    angle = 45
     def build(self):
         sm = ScreenManager(transition=NoTransition())
-        sm.add_widget(MenuScreen(name='menu'))
         sm.add_widget(GameScreen(name='game'))
+        sm.add_widget(MenuScreen(name='menu'))
         return sm
 
 
