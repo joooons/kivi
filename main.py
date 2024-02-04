@@ -27,8 +27,8 @@ class Space(App):
 
     def build(self):
         sm = ScreenManager(transition=NoTransition())
-        sm.add_widget(MenuScreen(name='menu'))
         sm.add_widget(TickScreen(name='tick'))
+        sm.add_widget(MenuScreen(name='menu'))
         # sm.add_widget(GameScreen(name='game'))
         return sm
 

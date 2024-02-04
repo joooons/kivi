@@ -3,18 +3,35 @@
     background_normal: ''
     background_down: ''
     background_color: 1, 0.5, 0, 1
+    size_hint: None, None
+    size: 400, 400
     on_press:
         print('click')
         self.background_color = (1, 0.6, 0, 1)
     on_release: self.background_color = (1, 0.5, 0, 1)
 
 <TickScreen>:
+    size_hint: 1, 1
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.2, 0.4, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
     BoxLayout:
         orientation: "vertical"
-        padding: 100
-        spacing: 50
+        size_hint: None, None
+        size: 1300, 1300
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        canvas.before:
+            Color:
+                rgba: 0.2, 0.4, 0.8, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
         BoxLayout:
-            spacing: 50
+            pos_hint: {"center_x": 0.5}
+            spacing: 10
             TickButton:
                 text: '1'
             TickButton:
@@ -22,7 +39,7 @@
             TickButton:
                 text: '3'
         BoxLayout:
-            spacing: 50
+            spacing: 10
             TickButton:
                 text: '4'
             TickButton:
@@ -30,7 +47,7 @@
             TickButton:
                 text: '6'
         BoxLayout:
-            spacing: 50
+            spacing: 10
             TickButton:
                 text: '7'
             TickButton:
