@@ -1,0 +1,22 @@
+<PongBall>:
+    size: 50, 50
+    canvas:
+        Color:
+            rgba: 1, 0, 0, 1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<PongGame>:
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+        Rectangle:
+            pos: 40, (self.height / 2) - (self.width / 2) + 40
+            size: self.width - 80, self.width - 80
+            source: './images/o.png'
+    PongBall:
+        center: self.parent.center
