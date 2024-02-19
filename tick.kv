@@ -2,7 +2,7 @@
     font_size: 100
     background_normal: ''
     background_down: ''
-    background_color: 1, 0.5, 0, 1
+    background_color: 1, 1, 1, 0
     size_hint: None, None
     size: self.parent.width * 0.3, self.parent.width * 0.3
     canvas:
@@ -15,6 +15,26 @@
         self.background_color = (1, 0.6, 0, 1)
     on_release: self.background_color = (1, 0.5, 0, 1)
 
+<Filler_Col@Image>:
+    size_hint: None, None
+    size: self.parent.width * 0.05, self.parent.width * 0.3
+    canvas:
+        Color:
+            rgba: 0.5, 0.8, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Filler_Row@Image>:
+    size_hint: None, None
+    size: self.parent.width, self.parent.width * 0.05
+    canvas:
+        Color:
+            rgba: 0.5, 0.8, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 <TickScreen>:
     size_hint: 1, 1
     Image:
@@ -23,44 +43,38 @@
         anim_delay: 0.1
         canvas.after:
             Color:
-                rgba: 0.5, 0.8, 1, 0.7
+                rgba: 0.5, 0.8, 1, 0.5
             Rectangle:
                 pos: self.pos
                 size: self.size
     BoxLayout:
         orientation: "vertical"
-        spacing: self.width * 0.05
+        # spacing: self.width * 0.05
         size_hint: None, None
         size: self.parent.width * 0.9, self.parent.width * 0.9
         pos_hint: {"center_x": 0.5, "center_y": 0.5}
-        canvas.before:
-            Color:
-                rgba: 0.2, 0.4, 0.8, 1
-            Rectangle:
-                pos: self.pos
-                size: self.size
+
         BoxLayout:
-            pos_hint: {"center_x": 0.5}
-            spacing: self.width * 0.05
+            # pos_hint: {"center_x": 0.5}
+            # spacing: self.width * 0.05
             TickButton:
-                text: '1'
+            Filler_Col:
             TickButton:
-                text: '2'
+            Filler_Col:
             TickButton:
-                text: '3'
+        Filler_Row:
         BoxLayout:
-            spacing: self.width * 0.05
+            # spacing: self.width * 0.05
             TickButton:
-                text: '4'
+            Filler_Col:
             TickButton:
-                text: '5'
+            Filler_Col:
             TickButton:
-                text: '6'
+        Filler_Row:
         BoxLayout:
-            spacing: self.width * 0.05
+            # spacing: self.width * 0.05
             TickButton:
-                text: '7'
+            Filler_Col:
             TickButton:
-                text: '8'
+            Filler_Col:
             TickButton:
-                text: '9'
