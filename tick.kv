@@ -4,7 +4,12 @@
     background_down: ''
     background_color: 1, 0.5, 0, 1
     size_hint: None, None
-    size: 400, 400
+    size: self.parent.width * 0.3, self.parent.width * 0.3
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: './images/o.png'
     on_press:
         print('click')
         self.background_color = (1, 0.6, 0, 1)
@@ -20,8 +25,9 @@
             size: self.size
     BoxLayout:
         orientation: "vertical"
+        spacing: self.width * 0.05
         size_hint: None, None
-        size: 1300, 1300
+        size: self.parent.width * 0.9, self.parent.width * 0.9
         pos_hint: {"center_x": 0.5, "center_y": 0.5}
         canvas.before:
             Color:
@@ -31,7 +37,7 @@
                 size: self.size
         BoxLayout:
             pos_hint: {"center_x": 0.5}
-            spacing: 10
+            spacing: self.width * 0.05
             TickButton:
                 text: '1'
             TickButton:
@@ -39,7 +45,7 @@
             TickButton:
                 text: '3'
         BoxLayout:
-            spacing: 10
+            spacing: self.width * 0.05
             TickButton:
                 text: '4'
             TickButton:
@@ -47,7 +53,7 @@
             TickButton:
                 text: '6'
         BoxLayout:
-            spacing: 10
+            spacing: self.width * 0.05
             TickButton:
                 text: '7'
             TickButton:

@@ -6,7 +6,6 @@ from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 kivy.require("2.2.1")
 
 Builder.load_file('menu.kv')
-# Builder.load_file('game.kv')
 Builder.load_file('tick.kv')
 
 
@@ -18,17 +17,13 @@ class TickScreen(Screen):
     pass
 
 
-class GameScreen(Screen):
-    pass
-
-
 class Space(App):
     square_pos = {'x': 400, 'y': 700}
 
     def build(self):
         sm = ScreenManager(transition=NoTransition())
-        sm.add_widget(MenuScreen(name='menu'))
         sm.add_widget(TickScreen(name='tick'))
+        sm.add_widget(MenuScreen(name='menu'))
         return sm
 
 
