@@ -17,12 +17,16 @@
 
 <TickScreen>:
     size_hint: 1, 1
-    canvas.before:
-        Color:
-            rgba: 0.1, 0.2, 0.4, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size
+    Image:
+        source: './images/background_1.gif'
+        fit_mode: 'cover'
+        anim_delay: 0.1
+        canvas.after:
+            Color:
+                rgba: 0.5, 0.8, 1, 0.7
+            Rectangle:
+                pos: self.pos
+                size: self.size
     BoxLayout:
         orientation: "vertical"
         spacing: self.width * 0.05
